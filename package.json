@@ -1,0 +1,28 @@
+{
+  "name": "testexercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "clean": "rm -rf node_modules",
+    "run": "node app.js"
+  },
+  "author": "nokkvi karlsson",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "supertest": "^3.3.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nokkvikarlsson/TestExercise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nokkvikarlsson/TestExercise/issues"
+  },
+  "homepage": "https://github.com/nokkvikarlsson/TestExercise#readme"
+}
