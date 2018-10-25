@@ -5,6 +5,7 @@
 * [Tictactoe](#module_Tictactoe)
     * [~Tictactoe()](#module_Tictactoe..Tictactoe)
         * [.takeInput()](#module_Tictactoe..Tictactoe+takeInput)
+        * [.showBoard()](#module_Tictactoe..Tictactoe+showBoard)
 
 <a name="module_Tictactoe..Tictactoe"></a>
 
@@ -15,6 +16,11 @@ Tictactoe constructor that intializes the starting player a 'X' and initalizes a
 **Member{gameboard}**: gameBoard - Represents the tic tac toe gameboard.  
 **Member{scoreboard}**: scoreBoard - Represents the tic tac toe scoreboard.  
 **Member{char}**: sign - Represents the current player either 'X' or 'O'.  
+
+* [~Tictactoe()](#module_Tictactoe..Tictactoe)
+    * [.takeInput()](#module_Tictactoe..Tictactoe+takeInput)
+    * [.showBoard()](#module_Tictactoe..Tictactoe+showBoard)
+
 <a name="module_Tictactoe..Tictactoe+takeInput"></a>
 
 #### tictactoe.takeInput()
@@ -24,3 +30,9 @@ corresponding to the value of input and then swaps the value of sign to 'X' or '
 **Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  
 **Param{integer}**: input - An integer value from 1-9 representing a square in the scoreboard.  
 **Return{boolean}**: Returns whether or not input was a success.  
+<a name="module_Tictactoe..Tictactoe+showBoard"></a>
+
+#### tictactoe.showBoard()
+Prints out the tic tac toe board to the console.
+
+**Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  
