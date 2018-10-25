@@ -1,3 +1,5 @@
+/** @module Tictactoe */
+
 //Constructor
 function GameBoard() {
     //squaresFilled is initialized in clearBoard() call

@@ -1,3 +1,5 @@
+/** @module Tictactoe */
+
 //Constructor that initializes Xwins and Owins as 0
 function ScoreBoard() {
     this.xWins = 0;
