@@ -1,4 +1,4 @@
-/** @module Tictactoe */
+/** @module Scoreboard */
 
 //Constructor that initializes Xwins and Owins as 0
 function ScoreBoard() {

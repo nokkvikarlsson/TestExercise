@@ -1,4 +1,4 @@
-/** @module Tictactoe */
+/** @module gameBoard */
 
 //Constructor
 function GameBoard() {
