@@ -1,7 +1,6 @@
-/** @module Scoreboard */
-
 /**
  * ScoreBoard constructor the initializes xWins and oWins as 0.
+ * @constructor
  */
 function ScoreBoard() {
     this.xWins = 0;
