@@ -12,9 +12,9 @@
 Tictactoe constructor that intializes the starting player a 'X' and initalizes an empty game board and score board.
 
 **Kind**: inner method of [<code>Tictactoe</code>](#module_Tictactoe)  
-**Member{gameboard}**: gameBoard - Represents the tic tac toe gameboard.  
-**Member{scoreboard}**: scoreBoard - Represents the tic tac toe scoreboard.  
-**Member{char}**: sign - Represents the current player either 'X' or 'O'.  
+**Var{gameboard}**: gameBoard - Represents the tic tac toe gameboard.  
+**Var{scoreboard}**: scoreBoard - Represents the tic tac toe scoreboard.  
+**Var{char}**: sign - Represents the current player either 'X' or 'O'.  
 <a name="module_Tictactoe..Tictactoe+takeInput"></a>
 
 #### tictactoe.takeInput()
