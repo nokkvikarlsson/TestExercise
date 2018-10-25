@@ -9,7 +9,6 @@ const readline = require('readline').createInterface({
 
 /**
  * Tictactoe intializes and empty tictactoe board.
- * 
  */
 function Tictactoe() {
 	this.gameBoard = new GameBoard();
@@ -17,6 +16,7 @@ function Tictactoe() {
 	this.sign = 'X';
 }
 
+//** */
 Tictactoe.prototype.takeInput = function(input) {
 	if(this.gameBoard.isValidInput(input)) {
 		if(this.gameBoard.fillSquare(input, this.sign)) {
@@ -88,4 +88,5 @@ Tictactoe.prototype.play = function() {
 
 /*const tic = new Tictactoe();
 tic.play();*/
+
 module.exports = Tictactoe;
