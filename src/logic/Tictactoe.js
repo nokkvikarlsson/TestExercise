@@ -1,3 +1,5 @@
+/** @module tictactoe */
+
 const GameBoard = require('./GameBoard');
 const ScoreBoard = require('./ScoreBoard');
 const readline = require('readline').createInterface({
@@ -7,6 +9,7 @@ const readline = require('readline').createInterface({
 
 /**
  * Tictactoe intializes and empty tictactoe board.
+ * 
  */
 function Tictactoe() {
 	this.gameBoard = new GameBoard();

@@ -1,20 +1,27 @@
+## Modules
+
+<dl>
+<dt><a href="#module_tictactoe">tictactoe</a></dt>
+<dd></dd>
+</dl>
+
 ## Functions
 
 <dl>
-<dt><a href="#Tictactoe">Tictactoe()</a></dt>
-<dd><p>Tictactoe intializes and empty tictactoe board.</p>
-</dd>
 <dt><a href="#greeting">greeting()</a></dt>
 <dd><p>This is a description of the foo function.</p>
 </dd>
 </dl>
 
-<a name="Tictactoe"></a>
+<a name="module_tictactoe"></a>
 
-## Tictactoe()
+## tictactoe
+<a name="module_tictactoe..Tictactoe"></a>
+
+### tictactoe~Tictactoe()
 Tictactoe intializes and empty tictactoe board.
 
-**Kind**: global function  
+**Kind**: inner method of [<code>tictactoe</code>](#module_tictactoe)  
 <a name="greeting"></a>
 
 ## greeting()
