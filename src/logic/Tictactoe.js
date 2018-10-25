@@ -16,7 +16,10 @@ function Tictactoe() {
 	this.sign = 'X';
 }
 
-//** */
+/**Takes in input from the user from 1 to 9
+*
+*
+*/
 Tictactoe.prototype.takeInput = function(input) {
 	if(this.gameBoard.isValidInput(input)) {
 		if(this.gameBoard.fillSquare(input, this.sign)) {
