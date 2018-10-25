@@ -40,6 +40,10 @@ Tictactoe.prototype.takeInput = function(input) {
 		return false;
 	}
 }
+
+/**
+ * Prints out the tic tac toe board to the console.
+ */
 Tictactoe.prototype.showBoard = function() {
 	console.log(this.gameBoard.squares[0] + "|" + this.gameBoard.squares[1] + "|" + this.gameBoard.squares[2]);
 	console.log("- - -");
