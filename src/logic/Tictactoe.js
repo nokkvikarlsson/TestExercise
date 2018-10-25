@@ -1,4 +1,4 @@
-/** @module tictactoe */
+/** @module Tictactoe */
 
 const GameBoard = require('./GameBoard');
 const ScoreBoard = require('./ScoreBoard');
@@ -8,7 +8,10 @@ const readline = require('readline').createInterface({
   })
 
 /**
- * Tictactoe constructor that intializes and empty tictactoe board.
+ * Tictactoe constructor that intializes the starting player a 'X' and initalizes an empty game board and score board.
+ * @member{GameBoard} gameBoard - Represents the tic tac toe gameboard.
+ * @member{ScoreBoard} scoreBoard - Represents the tic tac toe scoreboard.
+ * @member{Char} sign - Represents the current player either 'X' or 'O'.
  */
 function Tictactoe() {
 	this.gameBoard = new GameBoard();
@@ -18,8 +21,8 @@ function Tictactoe() {
 
 /**Takes in an integer as a parameter and filles a square in the gameboard with the value of sign beetween 1-9 
  * corresponding to the value of input and then swaps the value of sign to 'X' or 'O' depending on the current value of sign. 
-* @param{integer} input - 
-* @return {boolean} Returns whether or not input was a success
+* @param{integer} input - An integer value from 1-9 representing a square in the scoreboard.
+* @return{boolean} Returns whether or not input was a success.
 */
 Tictactoe.prototype.takeInput = function(input) {
 	if(this.gameBoard.isValidInput(input)) {
