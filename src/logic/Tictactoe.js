@@ -9,9 +9,9 @@ const readline = require('readline').createInterface({
 
 /**
  * Tictactoe constructor that intializes the starting player a 'X' and initalizes an empty game board and score board.
- * @var{GameBoard} gameBoard - Represents the tic tac toe gameboard.
- * @var{ScoreBoard} scoreBoard - Represents the tic tac toe scoreboard.
- * @var{Char} sign - Represents the current player either 'X' or 'O'.
+ * @member{GameBoard} gameBoard - Represents the tic tac toe gameboard.
+ * @member{ScoreBoard} scoreBoard - Represents the tic tac toe scoreboard.
+ * @member{Char} sign - Represents the current player either 'X' or 'O'.
  */
 function Tictactoe() {
 	this.gameBoard = new GameBoard();
