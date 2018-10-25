@@ -3,7 +3,7 @@
  * that represents a game board for a tic tac toe game.
  * @constructor
  * @member{char[9]} squares - Represents the tic tac toe board.
- * @member{int} filledSquares - Stores how many squares in the board are filled with either 'X' or 'O'.
+ * @member{integer} filledSquares - Stores how many squares in the board are filled with either 'X' or 'O'.
  */
 function GameBoard() {
     //squaresFilled is initialized in clearBoard() call
@@ -17,7 +17,7 @@ function GameBoard() {
  * Checks if input has a value between 1-9 and therefor valid.
  * @function
  * @param{int} input - An integer value from 1-9 representing a square in the scoreboard.
- * @return{bool} Returns true if input has a value between 1-9, otherwise false.
+ * @return{boolean} Returns true if input has a value between 1-9, otherwise false.
  */
 GameBoard.prototype.isValidInput = function(input) {
     if(input > 0 && input < 10 && this.squares[input - 1] === " ") {
