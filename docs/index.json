@@ -602,7 +602,7 @@
     "__docId__": 50,
     "kind": "file",
     "name": "src/logic/greeting.js",
-    "content": "\n/**\n * What a great class this is!\n * @example name is a string\n * let myClass = new MyAwesomeClass();\n */\n/**\n   * Constructor for my awesome class\n   * @param {number} foo The foo for my awesome class\n   * @param {string} bar The bar for my awesome class\n   */ \n//Takes in a string variable as parameter and returns a greeting with that name.\nfunction greeting(name) {\n  return \"Hello, \" + name + \"!\";\n}\n\nmodule.exports = greeting;\n",
+    "content": "/**\n   * Constructor for my function\n   * @param {name} string The foo for my awesome class\n   * @param {string} bar The bar for my awesome class\n   */ \n/**Takes in a string variable as parameter and returns a greeting with that name. */\nfunction greeting(name) {\n  return \"Hello, \" + name + \"!\";\n}\n\nmodule.exports = greeting;\n\n",
     "static": true,
     "longname": "/Users/nokkvikarlsson/Documents/Þriðja önn/Hugbúnaðarfræði/TestExercise/TestExercise/src/logic/greeting.js",
     "access": "public",
@@ -622,28 +622,14 @@
     "export": false,
     "importPath": "testexercise/src/logic/greeting.js",
     "importStyle": null,
-    "description": "Constructor for my awesome class",
-    "lineNumber": 13,
+    "description": "Takes in a string variable as parameter and returns a greeting with that name.",
+    "lineNumber": 7,
     "params": [
       {
-        "nullable": null,
+        "name": "name",
         "types": [
-          "number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "foo",
-        "description": "The foo for my awesome class"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "string"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "bar",
-        "description": "The bar for my awesome class"
+          "*"
+        ]
       }
     ],
     "return": {
