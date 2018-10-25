@@ -1,8 +1,8 @@
 ## Functions
 
 <dl>
-<dt><a href="#Tictactoe">Tictactoe()</a> ⇒ <code>survival</code></dt>
-<dd><p>TicTacoToe.</p>
+<dt><a href="#Tictactoe">Tictactoe()</a></dt>
+<dd><p>Tictactoe intializes and empty tictactoe board.</p>
 </dd>
 <dt><a href="#greeting">greeting()</a></dt>
 <dd><p>This is a description of the foo function.</p>
@@ -11,16 +11,10 @@
 
 <a name="Tictactoe"></a>
 
-## Tictactoe() ⇒ <code>survival</code>
-TicTacoToe.
+## Tictactoe()
+Tictactoe intializes and empty tictactoe board.
 
 **Kind**: global function  
-
-| Param | Type | Description |
-| --- | --- | --- |
-|  | <code>object</code> | privacy gown |
-|  | <code>object</code> | security |
-
 <a name="greeting"></a>
 
 ## greeting()

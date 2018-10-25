@@ -6,10 +6,7 @@ const readline = require('readline').createInterface({
   })
 
 /**
- * TicTacoToe.
- * @param {object} - privacy gown
- * @param {object} - security
- * @returns {survival} 
+ * Tictactoe intializes and empty tictactoe board.
  */
 function Tictactoe() {
 	this.gameBoard = new GameBoard();
