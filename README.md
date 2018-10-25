@@ -1,7 +1,7 @@
 ## Modules
 
 <dl>
-<dt><a href="#module_gameBoard">gameBoard</a></dt>
+<dt><a href="#module_Gameboard">Gameboard</a></dt>
 <dd></dd>
 <dt><a href="#module_Scoreboard">Scoreboard</a></dt>
 <dd></dd>
@@ -9,9 +9,18 @@
 <dd></dd>
 </dl>
 
-<a name="module_gameBoard"></a>
+<a name="module_Gameboard"></a>
 
-## gameBoard
+## Gameboard
+<a name="module_Gameboard..GameBoard"></a>
+
+### Gameboard~GameBoard()
+GameBoard constructor that initializes and array of characters
+ that represents a game board for a tic tac toe game.
+
+**Kind**: inner method of [<code>Gameboard</code>](#module_Gameboard)  
+**Member{char[9]}**: squares - Represents the tic tac toe board.  
+**Member{int}**: filledSquares - Stores how many squares in the board are filled with either 'X' or 'O'.  
 <a name="module_Scoreboard"></a>
 
 ## Scoreboard
@@ -49,8 +58,8 @@ Takes in an integer as a parameter and filles a square in the gameboard with the
 corresponding to the value of input and then swaps the value of sign to 'X' or 'O' depending on the current value of sign.
 
 **Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  
-**Param{integer}**: input - An integer value from 1-9 representing a square in the scoreboard.  
-**Return{boolean}**: Returns whether or not input was a success.  
+**Param{int}**: input - An integer value from 1-9 representing a square in the scoreboard.  
+**Return{bool}**: Returns whether or not input was a success.  
 <a name="module_Tictactoe..Tictactoe+showBoard"></a>
 
 #### tictactoe.showBoard()

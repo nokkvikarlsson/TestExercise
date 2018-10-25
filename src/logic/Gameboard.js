@@ -1,6 +1,12 @@
-/** @module gameBoard */
+/** @module Gameboard */
 
 //Constructor
+/**
+ * GameBoard constructor that initializes and array of characters
+ *  that represents a game board for a tic tac toe game.
+ *  @member{char[9]} squares - Represents the tic tac toe board.
+ *  @member{int} filledSquares - Stores how many squares in the board are filled with either 'X' or 'O'.
+ */
 function GameBoard() {
     //squaresFilled is initialized in clearBoard() call
     //decleration is kept in comment for readability's sake
