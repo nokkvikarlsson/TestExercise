@@ -1,12 +1,16 @@
 /** @module Scoreboard */
 
-//Constructor that initializes Xwins and Owins as 0
+/**
+ * ScoreBoard constructor the initializes xWins and oWins as 0.
+ */
 function ScoreBoard() {
     this.xWins = 0;
     this.oWins = 0;
 }
 
-//Increments either Xwins or Owins depending if sign is "X" or "O"
+/**
+ * Increments either xWins or oWins depending on whether the value of sign is "X" or "O".
+ */
 ScoreBoard.prototype.raiseWins = function(sign) {
     if(sign === "X") {
         this.xWins++;
@@ -16,7 +20,9 @@ ScoreBoard.prototype.raiseWins = function(sign) {
     }
 }
 
-//Sets xWins and oWins to 0
+/**
+ * Sets xWins and oWins to 0.
+ */
 ScoreBoard.prototype.clearScores = function() {
     this.xWins = 0;
     this.oWins = 0;
