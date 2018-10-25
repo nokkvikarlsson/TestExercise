@@ -8,7 +8,7 @@ const readline = require('readline').createInterface({
   })
 
 /**
- * Tictactoe intializes and empty tictactoe board.
+ * Tictactoe constructor that intializes and empty tictactoe board.
  */
 function Tictactoe() {
 	this.gameBoard = new GameBoard();
@@ -16,9 +16,10 @@ function Tictactoe() {
 	this.sign = 'X';
 }
 
-/**Takes in input from the user from 1 to 9
-*
-*
+/**Takes in an integer as a parameter and filles a square in the gameboard with the value of sign beetween 1-9 
+ * corresponding to the value of input and then swaps the value of sign to 'X' or 'O' depending on the current value of sign. 
+* @param{integer} input - 
+* @return {boolean} Returns whether or not input was a success
 */
 Tictactoe.prototype.takeInput = function(input) {
 	if(this.gameBoard.isValidInput(input)) {
