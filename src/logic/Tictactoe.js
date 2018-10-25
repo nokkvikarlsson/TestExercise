@@ -21,9 +21,9 @@ function Tictactoe() {
 
 /**Takes in an integer as a parameter and filles a square in the gameboard with the value of sign beetween 1-9 
  * corresponding to the value of input and then swaps the value of sign to 'X' or 'O' depending on the current value of sign. 
-* @param{integer} input - An integer value from 1-9 representing a square in the scoreboard.
-* @return{boolean} Returns whether or not input was a success.
-*/
+ * @param{integer} input - An integer value from 1-9 representing a square in the scoreboard.
+ * @return{boolean} Returns whether or not input was a success.
+ */
 Tictactoe.prototype.takeInput = function(input) {
 	if(this.gameBoard.isValidInput(input)) {
 		if(this.gameBoard.fillSquare(input, this.sign)) {
@@ -52,6 +52,9 @@ Tictactoe.prototype.showBoard = function() {
 	console.log(this.gameBoard.squares[6] + "|" + this.gameBoard.squares[7] + "|" + this.gameBoard.squares[8]);
 }
 
+/**
+ * Sets the current player as 'X' and clears the game board and the score board
+ */
 Tictactoe.prototype.startNewGame = function() {
 	readline.question("Would you like to start a new game? (y/n)", (input) => {
 		if(input != 'y' && input != 'n') {
@@ -70,6 +73,10 @@ Tictactoe.prototype.startNewGame = function() {
 	})
 }
 
+/**
+ * Starts a tic tac toe game, and calls itself recursively until either player wins or the game ends in a draw.
+ * If either player wins raise either xWins og oWins in the score board depending if 'X' or 'O' won.
+ */
 Tictactoe.prototype.play = function() {
 		console.log("Scoreboard");
 		console.log("X: " + this.scoreBoard.xWins + "-" + this.scoreBoard.oWins + " :O");

@@ -6,6 +6,8 @@
     * [~Tictactoe()](#module_Tictactoe..Tictactoe)
         * [.takeInput()](#module_Tictactoe..Tictactoe+takeInput)
         * [.showBoard()](#module_Tictactoe..Tictactoe+showBoard)
+        * [.startNewGame()](#module_Tictactoe..Tictactoe+startNewGame)
+        * [.play()](#module_Tictactoe..Tictactoe+play)
 
 <a name="module_Tictactoe..Tictactoe"></a>
 
@@ -20,6 +22,8 @@ Tictactoe constructor that intializes the starting player a 'X' and initalizes a
 * [~Tictactoe()](#module_Tictactoe..Tictactoe)
     * [.takeInput()](#module_Tictactoe..Tictactoe+takeInput)
     * [.showBoard()](#module_Tictactoe..Tictactoe+showBoard)
+    * [.startNewGame()](#module_Tictactoe..Tictactoe+startNewGame)
+    * [.play()](#module_Tictactoe..Tictactoe+play)
 
 <a name="module_Tictactoe..Tictactoe+takeInput"></a>
 
@@ -34,5 +38,18 @@ corresponding to the value of input and then swaps the value of sign to 'X' or '
 
 #### tictactoe.showBoard()
 Prints out the tic tac toe board to the console.
+
+**Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  
+<a name="module_Tictactoe..Tictactoe+startNewGame"></a>
+
+#### tictactoe.startNewGame()
+Sets the current player as 'X' and clears the game board and the score board
+
+**Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  
+<a name="module_Tictactoe..Tictactoe+play"></a>
+
+#### tictactoe.play()
+Starts a tic tac toe game, and calls itself recursively until either player wins or the game ends in a draw.
+If either player wins raise either xWins og oWins in the score board depending if 'X' or 'O' won.
 
 **Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  
