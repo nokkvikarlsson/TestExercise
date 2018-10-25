@@ -7,7 +7,8 @@
     "test": "jest",
     "clean": "rm -rf node_modules",
     "run": "node app.js",
-    "build": "webpack"
+    "build": "webpack",
+    "doc": "jsdoc2md src/logic/* > README.md"
   },
   "author": "nokkvi karlsson",
   "license": "ISC",
