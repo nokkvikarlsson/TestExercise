@@ -1,0 +1,28 @@
+{
+  "coverage": "20%",
+  "expectCount": 5,
+  "actualCount": 1,
+  "files": {
+    "src/client/index.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    },
+    "src/logic/greeting.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/server/api.js": {
+      "expectCount": 3,
+      "actualCount": 0,
+      "undocumentLines": [
+        2,
+        3,
+        4
+      ]
+    }
+  }
+}

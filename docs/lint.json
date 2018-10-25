@@ -1,0 +1,23 @@
+[
+  {
+    "name": "greeting",
+    "filePath": "src/logic/greeting.js",
+    "lines": [
+      {
+        "lineNumber": 11,
+        "line": "//Takes in a string variable as parameter and returns a greeting with that name."
+      },
+      {
+        "lineNumber": 12,
+        "line": "function greeting(name) {"
+      }
+    ],
+    "codeParams": [
+      "name"
+    ],
+    "docParams": [
+      "foo",
+      "bar"
+    ]
+  }
+]
