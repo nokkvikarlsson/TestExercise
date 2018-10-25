@@ -15,6 +15,7 @@ function GameBoard() {
 
 /**
  * Checks if input has a value between 1-9 and therefor valid.
+ * @function
  * @param{int} input - An integer value from 1-9 representing a square in the scoreboard.
  * @return{bool} Returns true if input has a value between 1-9, otherwise false.
  */
