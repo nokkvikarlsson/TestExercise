@@ -288,6 +288,24 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "src/logic/gameboard.js",
+    "file/src/logic/Gameboard.js.html",
+    "src/logic/Gameboard.js",
+    "file"
+  ],
+  [
+    "src/logic/scoreboard.js",
+    "file/src/logic/Scoreboard.js.html",
+    "src/logic/Scoreboard.js",
+    "file"
+  ],
+  [
+    "src/logic/tictactoe.js",
+    "file/src/logic/Tictactoe.js.html",
+    "src/logic/Tictactoe.js",
+    "file"
+  ],
+  [
     "src/logic/greeting.js",
     "file/src/logic/greeting.js.html",
     "src/logic/greeting.js",

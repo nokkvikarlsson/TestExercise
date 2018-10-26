@@ -42,137 +42,6 @@
 
 
 
-    <section>
-        <article><h2>Modules</h2><dl>
-<dt><a href="#module_Gameboard">Gameboard</a></dt>
-<dd></dd>
-<dt><a href="#module_Scoreboard">Scoreboard</a></dt>
-<dd></dd>
-<dt><a href="#module_Tictactoe">Tictactoe</a></dt>
-<dd></dd>
-</dl>
-
-<p><a name="module_Gameboard"></a></p>
-<h2>Gameboard</h2><ul>
-<li><a href="#module_Gameboard">Gameboard</a><ul>
-<li><a href="#module_Gameboard..GameBoard">~GameBoard()</a><ul>
-<li><a href="#module_Gameboard..GameBoard+isValidInput">.isValidInput()</a></li>
-<li><a href="#module_Gameboard..GameBoard+fillSquare">.fillSquare()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isFull">.isFull()</a></li>
-<li><a href="#module_Gameboard..GameBoard+clearBoard">.clearBoard()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isWinner">.isWinner()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isWinnerHorizontal">.isWinnerHorizontal()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isWinnerVertical">.isWinnerVertical()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isWinnerDiagonal">.isWinnerDiagonal()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isThreeFilled">.isThreeFilled()</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><a name="module_Gameboard..GameBoard"></a></p>
-<h3>Gameboard~GameBoard()</h3><p>GameBoard constructor that initializes and array of characters
- that represents a game board for a tic tac toe game.</p>
-<p><strong>Kind</strong>: inner method of <a href="#module_Gameboard"><code>Gameboard</code></a><br><strong>Member{char[9]}</strong>: squares - Represents the tic tac toe board.<br><strong>Member{int}</strong>: filledSquares - Stores how many squares in the board are filled with either 'X' or 'O'.  </p>
-<ul>
-<li><a href="#module_Gameboard..GameBoard">~GameBoard()</a><ul>
-<li><a href="#module_Gameboard..GameBoard+isValidInput">.isValidInput()</a></li>
-<li><a href="#module_Gameboard..GameBoard+fillSquare">.fillSquare()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isFull">.isFull()</a></li>
-<li><a href="#module_Gameboard..GameBoard+clearBoard">.clearBoard()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isWinner">.isWinner()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isWinnerHorizontal">.isWinnerHorizontal()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isWinnerVertical">.isWinnerVertical()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isWinnerDiagonal">.isWinnerDiagonal()</a></li>
-<li><a href="#module_Gameboard..GameBoard+isThreeFilled">.isThreeFilled()</a></li>
-</ul>
-</li>
-</ul>
-<p><a name="module_Gameboard..GameBoard+isValidInput"></a></p>
-<h4>gameBoard.isValidInput()</h4><p>Checks if input has a value between 1-9 and therefor valid.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Gameboard..GameBoard"><code>GameBoard</code></a><br><strong>Param{int}</strong>: input - An integer value from 1-9 representing a square in the scoreboard.<br><strong>Return{bool}</strong>: Returns true if input has a value between 1-9, otherwise false.<br><a name="module_Gameboard..GameBoard+fillSquare"></a></p>
-<h4>gameBoard.fillSquare()</h4><p>Fills a square in the game board with either 'X' or 'O' depending on the value of sign
- and increments squaresFilled if the value of input is between 1-9.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Gameboard..GameBoard"><code>GameBoard</code></a><br><strong>Param{input}</strong>: - An integer value from 1-9 representing a square in the scoreboard.<br><strong>Param{sign}</strong>: - A char which has the value 'X' or 'O' depending on which players' turn it is.<br><strong>Return{bool}</strong>: - Returns true if the square was successfully filled, otherwise false.<br><a name="module_Gameboard..GameBoard+isFull"></a></p>
-<h4>gameBoard.isFull()</h4><p>Checks if the game board is full. If filledSquares is equal to 9 then the board is full.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Gameboard..GameBoard"><code>GameBoard</code></a><br><strong>Return{bool}</strong>: Return true if filledSquares is equals to 9, otherwise false.<br><a name="module_Gameboard..GameBoard+clearBoard"></a></p>
-<h4>gameBoard.clearBoard()</h4><p>Clears the game board by setting filledSquares to 0 and every index in squares to &quot; &quot;.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Gameboard..GameBoard"><code>GameBoard</code></a><br><a name="module_Gameboard..GameBoard+isWinner"></a></p>
-<h4>gameBoard.isWinner()</h4><p>Checks if the current player has won the game.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Gameboard..GameBoard"><code>GameBoard</code></a><br><strong>Param{char}</strong>: sign - Represents the current player either 'X' or 'O'.<br><strong>Return{bool}</strong>: Returns true is there is a winner, otherwise false.<br><a name="module_Gameboard..GameBoard+isWinnerHorizontal"></a></p>
-<h4>gameBoard.isWinnerHorizontal()</h4><p>Checks the game board horizontally for any three horizontal squares that
-have the same value as sign.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Gameboard..GameBoard"><code>GameBoard</code></a><br><strong>Param{char}</strong>: sign - Represents the current player either 'X' or 'O'.<br><strong>Return{bool}</strong>: Returns true if three horizontal squares have the same value as sign, otherwise false.<br><a name="module_Gameboard..GameBoard+isWinnerVertical"></a></p>
-<h4>gameBoard.isWinnerVertical()</h4><p>Checks the game board vertically for any three vertical squares that 
-have the same value as sign.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Gameboard..GameBoard"><code>GameBoard</code></a><br><strong>Param{char}</strong>: sign - Represents the current player either 'X' or 'O'.<br><strong>Return{bool}</strong>: Returns true if three vertically squares have the same value as sign, otherwise false.<br><a name="module_Gameboard..GameBoard+isWinnerDiagonal"></a></p>
-<h4>gameBoard.isWinnerDiagonal()</h4><p>Checks the game board diagonally for any three diagonal squares that 
-have the same value as sign.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Gameboard..GameBoard"><code>GameBoard</code></a><br><strong>Param{char}</strong>: sign - Represents the current player either 'X' or 'O'.<br><strong>Return{bool}</strong>: Returns true if three diagonal squares have the same value as sign, otherwise false.<br><a name="module_Gameboard..GameBoard+isThreeFilled"></a></p>
-<h4>gameBoard.isThreeFilled()</h4><p>Checks if three squares are filled with the same sign value.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Gameboard..GameBoard"><code>GameBoard</code></a><br><strong>Param{char}</strong>: sign - Represents the current player either 'X' or 'O'.<br><strong>Param{int}</strong>: index1 - An index in the square array.<br><strong>Param{int}</strong>: index1 - An index in the square array.<br><strong>Param{int}</strong>: index1 - An index in the square array.<br><strong>Return{bool}</strong>: Returns true if there are three squares filled with the sign value, otherwise false.<br><a name="module_Scoreboard"></a></p>
-<h2>Scoreboard</h2><ul>
-<li><a href="#module_Scoreboard">Scoreboard</a><ul>
-<li><a href="#module_Scoreboard..ScoreBoard">~ScoreBoard()</a><ul>
-<li><a href="#module_Scoreboard..ScoreBoard+raiseWins">.raiseWins()</a></li>
-<li><a href="#module_Scoreboard..ScoreBoard+clearScores">.clearScores()</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><a name="module_Scoreboard..ScoreBoard"></a></p>
-<h3>Scoreboard~ScoreBoard()</h3><p>ScoreBoard constructor the initializes xWins and oWins as 0.</p>
-<p><strong>Kind</strong>: inner method of <a href="#module_Scoreboard"><code>Scoreboard</code></a>  </p>
-<ul>
-<li><a href="#module_Scoreboard..ScoreBoard">~ScoreBoard()</a><ul>
-<li><a href="#module_Scoreboard..ScoreBoard+raiseWins">.raiseWins()</a></li>
-<li><a href="#module_Scoreboard..ScoreBoard+clearScores">.clearScores()</a></li>
-</ul>
-</li>
-</ul>
-<p><a name="module_Scoreboard..ScoreBoard+raiseWins"></a></p>
-<h4>scoreBoard.raiseWins()</h4><p>Increments either xWins or oWins depending on whether the value of sign is &quot;X&quot; or &quot;O&quot;.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Scoreboard..ScoreBoard"><code>ScoreBoard</code></a><br><a name="module_Scoreboard..ScoreBoard+clearScores"></a></p>
-<h4>scoreBoard.clearScores()</h4><p>Sets xWins and oWins to 0.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Scoreboard..ScoreBoard"><code>ScoreBoard</code></a><br><a name="module_Tictactoe"></a></p>
-<h2>Tictactoe</h2><ul>
-<li><a href="#module_Tictactoe">Tictactoe</a><ul>
-<li><a href="#module_Tictactoe..Tictactoe">~Tictactoe()</a><ul>
-<li><a href="#module_Tictactoe..Tictactoe+takeInput">.takeInput()</a></li>
-<li><a href="#module_Tictactoe..Tictactoe+showBoard">.showBoard()</a></li>
-<li><a href="#module_Tictactoe..Tictactoe+startNewGame">.startNewGame()</a></li>
-<li><a href="#module_Tictactoe..Tictactoe+play">.play()</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><a name="module_Tictactoe..Tictactoe"></a></p>
-<h3>Tictactoe~Tictactoe()</h3><p>Tictactoe constructor that intializes the starting player a 'X' and initalizes an empty game board and score board.</p>
-<p><strong>Kind</strong>: inner method of <a href="#module_Tictactoe"><code>Tictactoe</code></a><br><strong>Member{gameboard}</strong>: gameBoard - Represents the tic tac toe gameboard.<br><strong>Member{scoreboard}</strong>: scoreBoard - Represents the tic tac toe scoreboard.<br><strong>Member{char}</strong>: sign - Represents the current player either 'X' or 'O'.  </p>
-<ul>
-<li><a href="#module_Tictactoe..Tictactoe">~Tictactoe()</a><ul>
-<li><a href="#module_Tictactoe..Tictactoe+takeInput">.takeInput()</a></li>
-<li><a href="#module_Tictactoe..Tictactoe+showBoard">.showBoard()</a></li>
-<li><a href="#module_Tictactoe..Tictactoe+startNewGame">.startNewGame()</a></li>
-<li><a href="#module_Tictactoe..Tictactoe+play">.play()</a></li>
-</ul>
-</li>
-</ul>
-<p><a name="module_Tictactoe..Tictactoe+takeInput"></a></p>
-<h4>tictactoe.takeInput()</h4><p>Takes in an integer as a parameter and filles a square in the gameboard with the value of sign beetween 1-9 
-corresponding to the value of input and then swaps the value of sign to 'X' or 'O' depending on the current value of sign.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Tictactoe..Tictactoe"><code>Tictactoe</code></a><br><strong>Param{int}</strong>: input - An integer value from 1-9 representing a square in the scoreboard.<br><strong>Return{bool}</strong>: Returns whether or not input was a success.<br><a name="module_Tictactoe..Tictactoe+showBoard"></a></p>
-<h4>tictactoe.showBoard()</h4><p>Prints out the tic tac toe board to the console.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Tictactoe..Tictactoe"><code>Tictactoe</code></a><br><a name="module_Tictactoe..Tictactoe+startNewGame"></a></p>
-<h4>tictactoe.startNewGame()</h4><p>Sets the current player as 'X' and clears the game board and the score board</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Tictactoe..Tictactoe"><code>Tictactoe</code></a><br><a name="module_Tictactoe..Tictactoe+play"></a></p>
-<h4>tictactoe.play()</h4><p>Starts a tic tac toe game, and calls itself recursively until either player wins or the game ends in a draw.
-If either player wins raise either xWins og oWins in the score board depending if 'X' or 'O' won.</p>
-<p><strong>Kind</strong>: instance method of <a href="#module_Tictactoe..Tictactoe"><code>Tictactoe</code></a>  </p></article>
-    </section>
-
 
 
 
@@ -187,7 +56,7 @@ If either player wins raise either xWins og oWins in the score board depending i
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Oct 25 2018 19:57:04 GMT+0000 (GMT)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Oct 26 2018 12:20:19 GMT+0000 (GMT)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -601,8 +601,587 @@
   {
     "__docId__": 50,
     "kind": "file",
+    "name": "src/logic/Gameboard.js",
+    "content": "/**\n * GameBoard constructor that initializes and array of characters\n * that represents a game board for a tic tac toe game.\n * @constructor\n * @member{char[9]} squares - Represents the tic tac toe board.\n * @member{integer} filledSquares - Stores how many squares in the board are filled with either 'X' or 'O'.\n */\nfunction GameBoard() {\n    //squaresFilled is initialized in clearBoard() call\n    //decleration is kept in comment for readability's sake\n    //this.squaresFilled = 0;\n    this.squares = new Array(9);\n    this.clearBoard();\n}\n\n/**\n * Checks if input has a value between 1-9 and therefor valid.\n * @param{int} input - An integer value from 1-9 representing a square in the scoreboard.\n * @return{bool} Returns true if input has a value between 1-9, otherwise false.\n */\nGameBoard.prototype.isValidInput = function(input) {\n    if(input > 0 && input < 10 && this.squares[input - 1] === \" \") {\n        return true;\n    }\n    return false;\n}\n\n/**\n * Fills a square in the game board with either 'X' or 'O' depending on the value of sign\n *  and increments squaresFilled if the value of input is between 1-9.\n * @param{input} - An integer value from 1-9 representing a square in the scoreboard.\n * @param{sign} - A char which has the value 'X' or 'O' depending on which players' turn it is.\n * @return{bool} - Returns true if the square was successfully filled, otherwise false.\n */\nGameBoard.prototype.fillSquare = function(input, sign) {\n    if(this.isValidInput(input)) {\n        this.squares[input - 1] = sign;\n        this.squaresFilled++;\n        return true;\n    }\n    return false;\n}\n\n/**\n * Checks if the game board is full. If filledSquares is equal to 9 then the board is full.\n * @return{bool} Return true if filledSquares is equals to 9, otherwise false.\n */\nGameBoard.prototype.isFull = function() {\n    if(this.squaresFilled === 9) {\n        return true;\n    }\n    return false;\n}\n\n/**\n * Clears the game board by setting filledSquares to 0 and every index in squares to \" \".\n */\nGameBoard.prototype.clearBoard = function() {\n    this.squaresFilled = 0;\n    for(var i = 0; i < this.squares.length; i++) {\n        this.squares[i] = \" \";\n    }\n}\n\n/**\n * Checks if the current player has won the game.\n * @param{char} sign - Represents the current player either 'X' or 'O'.\n * @return{bool} Returns true is there is a winner, otherwise false.\n */\nGameBoard.prototype.isWinner = function(sign) {\n    if(this.isWinnerHorizontal(sign) || this.isWinnerVertical(sign) || this.isWinnerDiagonal(sign)) {\n        return true;\n    }\n    return false;\n}\n\n/**\n * Checks the game board horizontally for any three horizontal squares that\n * have the same value as sign.\n * @param{char} sign - Represents the current player either 'X' or 'O'.\n * @return{bool} Returns true if three horizontal squares have the same value as sign, otherwise false.\n */\nGameBoard.prototype.isWinnerHorizontal = function(sign) {\n    if(this.isThreeFilled(sign, 0, 1, 2) || this.isThreeFilled(sign, 3, 4, 5) || this.isThreeFilled(sign, 6, 7, 8)) {\n        return true;\n    }\n    return false;\n}\n\n/**\n * Checks the game board vertically for any three vertical squares that \n * have the same value as sign.\n * @param{char} sign - Represents the current player either 'X' or 'O'.\n * @return{bool} Returns true if three vertically squares have the same value as sign, otherwise false.\n */\nGameBoard.prototype.isWinnerVertical = function(sign) {\n    if(this.isThreeFilled(sign, 0, 3, 6) || this.isThreeFilled(sign, 1, 4, 7) || this.isThreeFilled(sign, 2, 5, 8)) {\n        return true;\n    }\n    return false;\n}\n\n/**\n * Checks the game board diagonally for any three diagonal squares that \n * have the same value as sign.\n * @param{char} sign - Represents the current player either 'X' or 'O'.\n * @return{bool} Returns true if three diagonal squares have the same value as sign, otherwise false.\n */\nGameBoard.prototype.isWinnerDiagonal = function(sign) {\n    if(this.isThreeFilled(sign, 0, 4, 8) || this.isThreeFilled(sign, 2, 4, 6)) {\n        return true;\n    }\n    return false;\n}\n\n/**\n * Checks if three squares are filled with the same sign value.\n * @param{char} sign - Represents the current player either 'X' or 'O'.\n * @param{int} index1 - An index in the square array.\n * @param{int} index1 - An index in the square array.\n * @param{int} index1 - An index in the square array.\n * @return{bool} Returns true if there are three squares filled with the sign value, otherwise false.\n */\nGameBoard.prototype.isThreeFilled = function(sign, index1, index2, index3) {\n    if(this.squares[index1] === sign && this.squares[index2] === sign && this.squares[index3] === sign) {\n        return true;\n    }\n    return false;\n}\n\nmodule.exports = GameBoard;\n",
+    "static": true,
+    "longname": "/Users/nokkvikarlsson/Documents/Þriðja önn/Hugbúnaðarfræði/TestExercise/TestExercise/src/logic/Gameboard.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "name": "GameBoard",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~GameBoard",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "GameBoard constructor that initializes and array of characters\nthat represents a game board for a tic tac toe game.",
+    "lineNumber": 8,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": "@member{char[9]} squares - Represents the tic tac toe board.\n@member{integer} filledSquares - Stores how many squares in the board are filled with either 'X' or 'O'."
+      }
+    ],
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "function",
+    "name": "isValidInput",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~isValidInput",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "Checks if input has a value between 1-9 and therefor valid.\n@param{int} input - An integer value from 1-9 representing a square in the scoreboard.\n@return{bool} Returns true if input has a value between 1-9, otherwise false.",
+    "lineNumber": 21,
+    "params": [
+      {
+        "name": "input",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "function",
+    "name": "fillSquare",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~fillSquare",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "Fills a square in the game board with either 'X' or 'O' depending on the value of sign\n and increments squaresFilled if the value of input is between 1-9.\n@param{input} - An integer value from 1-9 representing a square in the scoreboard.\n@param{sign} - A char which has the value 'X' or 'O' depending on which players' turn it is.\n@return{bool} - Returns true if the square was successfully filled, otherwise false.",
+    "lineNumber": 35,
+    "params": [
+      {
+        "name": "input",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "sign",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "function",
+    "name": "isFull",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~isFull",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "Checks if the game board is full. If filledSquares is equal to 9 then the board is full.\n@return{bool} Return true if filledSquares is equals to 9, otherwise false.",
+    "lineNumber": 48,
+    "params": [],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "function",
+    "name": "clearBoard",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~clearBoard",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "Clears the game board by setting filledSquares to 0 and every index in squares to \" \".",
+    "lineNumber": 58,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "function",
+    "name": "isWinner",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~isWinner",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "Checks if the current player has won the game.\n@param{char} sign - Represents the current player either 'X' or 'O'.\n@return{bool} Returns true is there is a winner, otherwise false.",
+    "lineNumber": 70,
+    "params": [
+      {
+        "name": "sign",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "function",
+    "name": "isWinnerHorizontal",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~isWinnerHorizontal",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "Checks the game board horizontally for any three horizontal squares that\nhave the same value as sign.\n@param{char} sign - Represents the current player either 'X' or 'O'.\n@return{bool} Returns true if three horizontal squares have the same value as sign, otherwise false.",
+    "lineNumber": 83,
+    "params": [
+      {
+        "name": "sign",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "function",
+    "name": "isWinnerVertical",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~isWinnerVertical",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "Checks the game board vertically for any three vertical squares that \nhave the same value as sign.\n@param{char} sign - Represents the current player either 'X' or 'O'.\n@return{bool} Returns true if three vertically squares have the same value as sign, otherwise false.",
+    "lineNumber": 96,
+    "params": [
+      {
+        "name": "sign",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "function",
+    "name": "isWinnerDiagonal",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~isWinnerDiagonal",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "Checks the game board diagonally for any three diagonal squares that \nhave the same value as sign.\n@param{char} sign - Represents the current player either 'X' or 'O'.\n@return{bool} Returns true if three diagonal squares have the same value as sign, otherwise false.",
+    "lineNumber": 109,
+    "params": [
+      {
+        "name": "sign",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "function",
+    "name": "isThreeFilled",
+    "memberof": "src/logic/Gameboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Gameboard.js~isThreeFilled",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Gameboard.js",
+    "importStyle": null,
+    "description": "Checks if three squares are filled with the same sign value.\n@param{char} sign - Represents the current player either 'X' or 'O'.\n@param{int} index1 - An index in the square array.\n@param{int} index1 - An index in the square array.\n@param{int} index1 - An index in the square array.\n@return{bool} Returns true if there are three squares filled with the sign value, otherwise false.",
+    "lineNumber": 124,
+    "params": [
+      {
+        "name": "sign",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "index1",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "index2",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "index3",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "file",
+    "name": "src/logic/Scoreboard.js",
+    "content": "/**\n * ScoreBoard constructor the initializes xWins and oWins as 0.\n * @constructor\n */\nfunction ScoreBoard() {\n    this.xWins = 0;\n    this.oWins = 0;\n}\n\n/**\n * Increments either xWins or oWins depending on whether the value of sign is \"X\" or \"O\".\n */\nScoreBoard.prototype.raiseWins = function(sign) {\n    if(sign === \"X\") {\n        this.xWins++;\n    }\n    else if(sign === \"O\") {\n        this.oWins++;\n    }\n}\n\n/**\n * Sets xWins and oWins to 0.\n */\nScoreBoard.prototype.clearScores = function() {\n    this.xWins = 0;\n    this.oWins = 0;\n}\n\nmodule.exports = ScoreBoard;\n",
+    "static": true,
+    "longname": "/Users/nokkvikarlsson/Documents/Þriðja önn/Hugbúnaðarfræði/TestExercise/TestExercise/src/logic/Scoreboard.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 62,
+    "kind": "function",
+    "name": "ScoreBoard",
+    "memberof": "src/logic/Scoreboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Scoreboard.js~ScoreBoard",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Scoreboard.js",
+    "importStyle": null,
+    "description": "ScoreBoard constructor the initializes xWins and oWins as 0.",
+    "lineNumber": 5,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": ""
+      }
+    ],
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "function",
+    "name": "raiseWins",
+    "memberof": "src/logic/Scoreboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Scoreboard.js~raiseWins",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Scoreboard.js",
+    "importStyle": null,
+    "description": "Increments either xWins or oWins depending on whether the value of sign is \"X\" or \"O\".",
+    "lineNumber": 13,
+    "params": [
+      {
+        "name": "sign",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "function",
+    "name": "clearScores",
+    "memberof": "src/logic/Scoreboard.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Scoreboard.js~clearScores",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Scoreboard.js",
+    "importStyle": null,
+    "description": "Sets xWins and oWins to 0.",
+    "lineNumber": 25,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "file",
+    "name": "src/logic/Tictactoe.js",
+    "content": "const GameBoard = require('./GameBoard');\nconst ScoreBoard = require('./ScoreBoard');\nconst readline = require('readline').createInterface({\n\tinput: process.stdin,\n\toutput: process.stdout\n  })\n\n/**\n * Tictactoe constructor that intializes the starting player a 'X' and initalizes an empty game board and score board.\n * @constructor\n * @member{GameBoard} gameBoard - Represents the tic tac toe gameboard.\n * @member{ScoreBoard} scoreBoard - Represents the tic tac toe scoreboard.\n * @member{Char} sign - Represents the current player either 'X' or 'O'.\n */\nfunction Tictactoe() {\n\tthis.gameBoard = new GameBoard();\n\tthis.scoreBoard = new ScoreBoard();\n\tthis.sign = 'X';\n}\n\n/**Takes in an integer as a parameter and filles a square in the gameboard with the value of sign beetween 1-9 \n * corresponding to the value of input and then swaps the value of sign to 'X' or 'O' depending on the current value of sign. \n * @param{int} input - An integer value from 1-9 representing a square in the scoreboard.\n * @return{bool} Returns whether or not input was a success.\n */\nTictactoe.prototype.takeInput = function(input) {\n\tif(this.gameBoard.isValidInput(input)) {\n\t\tif(this.gameBoard.fillSquare(input, this.sign)) {\n\t\t\tif(this.sign == 'X') {\n\t\t\t\tthis.sign = 'O';\n\t\t\t}\n\t\t\telse {\n\t\t\t\tthis.sign = 'X';\n\t\t\t}\n\t\t\treturn true;\n\t\t}\n\t}\n\telse {\n\t\treturn false;\n\t}\n}\n\n/**\n * Prints out the tic tac toe board to the console.\n */\nTictactoe.prototype.showBoard = function() {\n\tconsole.log(this.gameBoard.squares[0] + \"|\" + this.gameBoard.squares[1] + \"|\" + this.gameBoard.squares[2]);\n\tconsole.log(\"- - -\");\n\tconsole.log(this.gameBoard.squares[3] + \"|\" + this.gameBoard.squares[4] + \"|\" + this.gameBoard.squares[5]);\n\tconsole.log(\"- - -\");\n\tconsole.log(this.gameBoard.squares[6] + \"|\" + this.gameBoard.squares[7] + \"|\" + this.gameBoard.squares[8]);\n}\n\n/**\n * Sets the current player as 'X' and clears the game board and the score board\n */\nTictactoe.prototype.startNewGame = function() {\n\treadline.question(\"Would you like to start a new game? (y/n)\", (input) => {\n\t\tif(input != 'y' && input != 'n') {\n\t\t\tthis.startNewGame();\n\t\t}\n\t\telse {\n\t\t\tif(input == 'y') {\n\t\t\t\tthis.sign = 'X';\n\t\t\t\tthis.gameBoard.clearBoard();\n\t\t\t\tthis.play();\n\t\t\t}\n\t\t\telse {\n\t\t\t\tconsole.log(\"Goodbye\");\n\t\t\t}\n\t\t}\n\t})\n}\n\n/**\n * Starts a tic tac toe game, and calls itself recursively until either player wins or the game ends in a draw.\n * If either player wins raise either xWins og oWins in the score board depending if 'X' or 'O' won.\n */\nTictactoe.prototype.play = function() {\n\t\tconsole.log(\"Scoreboard\");\n\t\tconsole.log(\"X: \" + this.scoreBoard.xWins + \"-\" + this.scoreBoard.oWins + \" :O\");\n\t\tthis.showBoard();\n\t\tconsole.log(\"choose a number from 1-9\");\n\t\treadline.question(\"It's \" + this.sign + \" turn\", (input) => {\n\t\t\tthis.takeInput(input);\n\t\t\tif(!this.gameBoard.isWinner('X') && !this.gameBoard.isWinner('O') && !this.gameBoard.isFull()) {\n\t\t\t\tthis.play();\n\t\t\t}\n\t\t\telse {\n\t\t\t\tif(this.gameBoard.isFull()) {\n\t\t\t\t\tconsole.log(\"Draw\");\n\t\t\t\t}\n\t\t\t\telse if(this.gameBoard.isWinner('X')) {\n\t\t\t\t\tthis.scoreBoard.raiseWins('X');\n\t\t\t\t\tconsole.log('X won!');\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tthis.scoreBoard.raiseWins('O');\n\t\t\t\t\tconsole.log('O won');\n\t\t\t\t}\n\t\t\t\tthis.startNewGame();\n\t\t\t}\n\t\t  })\n}\n\n/*const tic = new Tictactoe();\ntic.play();*/\n\nmodule.exports = Tictactoe;\n",
+    "static": true,
+    "longname": "/Users/nokkvikarlsson/Documents/Þriðja önn/Hugbúnaðarfræði/TestExercise/TestExercise/src/logic/Tictactoe.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 66,
+    "kind": "variable",
+    "name": "GameBoard",
+    "memberof": "src/logic/Tictactoe.js",
+    "static": true,
+    "longname": "src/logic/Tictactoe.js~GameBoard",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Tictactoe.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "variable",
+    "name": "ScoreBoard",
+    "memberof": "src/logic/Tictactoe.js",
+    "static": true,
+    "longname": "src/logic/Tictactoe.js~ScoreBoard",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Tictactoe.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 2,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "variable",
+    "name": "readline",
+    "memberof": "src/logic/Tictactoe.js",
+    "static": true,
+    "longname": "src/logic/Tictactoe.js~readline",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Tictactoe.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 3,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "function",
+    "name": "Tictactoe",
+    "memberof": "src/logic/Tictactoe.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Tictactoe.js~Tictactoe",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Tictactoe.js",
+    "importStyle": null,
+    "description": "Tictactoe constructor that intializes the starting player a 'X' and initalizes an empty game board and score board.",
+    "lineNumber": 15,
+    "unknown": [
+      {
+        "tagName": "@constructor",
+        "tagValue": "@member{GameBoard} gameBoard - Represents the tic tac toe gameboard.\n@member{ScoreBoard} scoreBoard - Represents the tic tac toe scoreboard.\n@member{Char} sign - Represents the current player either 'X' or 'O'."
+      }
+    ],
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "function",
+    "name": "takeInput",
+    "memberof": "src/logic/Tictactoe.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Tictactoe.js~takeInput",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Tictactoe.js",
+    "importStyle": null,
+    "description": "Takes in an integer as a parameter and filles a square in the gameboard with the value of sign beetween 1-9 \ncorresponding to the value of input and then swaps the value of sign to 'X' or 'O' depending on the current value of sign. \n@param{int} input - An integer value from 1-9 representing a square in the scoreboard.\n@return{bool} Returns whether or not input was a success.",
+    "lineNumber": 26,
+    "params": [
+      {
+        "name": "input",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "function",
+    "name": "showBoard",
+    "memberof": "src/logic/Tictactoe.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Tictactoe.js~showBoard",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Tictactoe.js",
+    "importStyle": null,
+    "description": "Prints out the tic tac toe board to the console.",
+    "lineNumber": 46,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "function",
+    "name": "startNewGame",
+    "memberof": "src/logic/Tictactoe.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Tictactoe.js~startNewGame",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Tictactoe.js",
+    "importStyle": null,
+    "description": "Sets the current player as 'X' and clears the game board and the score board",
+    "lineNumber": 57,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "function",
+    "name": "play",
+    "memberof": "src/logic/Tictactoe.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/logic/Tictactoe.js~play",
+    "access": "public",
+    "export": false,
+    "importPath": "testexercise/src/logic/Tictactoe.js",
+    "importStyle": null,
+    "description": "Starts a tic tac toe game, and calls itself recursively until either player wins or the game ends in a draw.\nIf either player wins raise either xWins og oWins in the score board depending if 'X' or 'O' won.",
+    "lineNumber": 79,
+    "params": [],
+    "return": null,
+    "ignore": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "file",
     "name": "src/logic/greeting.js",
-    "content": "/**\n   * Constructor for my function\n   * @param {name} string The foo for my awesome class\n   * @param {string} bar The bar for my awesome class\n   */ \n/**Takes in a string variable as parameter and returns a greeting with that name. */\nfunction greeting(name) {\n  return \"Hello, \" + name + \"!\";\n}\n\nmodule.exports = greeting;\n\n",
+    "content": "function greeting(name) {\n  return \"Hello, \" + name + \"!\";\n}\n\nmodule.exports = greeting;\n\n",
     "static": true,
     "longname": "/Users/nokkvikarlsson/Documents/Þriðja önn/Hugbúnaðarfræði/TestExercise/TestExercise/src/logic/greeting.js",
     "access": "public",
@@ -610,7 +1189,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 51,
+    "__docId__": 75,
     "kind": "function",
     "name": "greeting",
     "memberof": "src/logic/greeting.js",
@@ -622,8 +1201,9 @@
     "export": false,
     "importPath": "testexercise/src/logic/greeting.js",
     "importStyle": null,
-    "description": "Takes in a string variable as parameter and returns a greeting with that name.",
-    "lineNumber": 7,
+    "description": null,
+    "lineNumber": 1,
+    "undocument": true,
     "params": [
       {
         "name": "name",
@@ -640,7 +1220,7 @@
     "ignore": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 76,
     "kind": "file",
     "name": "src/server/api.js",
     "content": "// src/api.js\nconst express = require(\"express\");\nconst app = express();\nconst greeting = require(\"../logic/greeting\");\napp.get(\"/greeting/:name\", (req, res) => {\n  // Fill in your code that:\n  // 1. set's the status code to 200\n  res.status(200);\n  // 2. and returns an object with the greeting\n  res.send({ greeting: \"Hello, \" + req.params.name + \"!\" });\n  // Hint: `req.params.name`\n});\n\nmodule.exports = app\n",
@@ -651,7 +1231,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 53,
+    "__docId__": 77,
     "kind": "variable",
     "name": "express",
     "memberof": "src/server/api.js",
@@ -672,7 +1252,7 @@
     "ignore": true
   },
   {
-    "__docId__": 54,
+    "__docId__": 78,
     "kind": "variable",
     "name": "app",
     "memberof": "src/server/api.js",
@@ -693,7 +1273,7 @@
     "ignore": true
   },
   {
-    "__docId__": 55,
+    "__docId__": 79,
     "kind": "variable",
     "name": "greeting",
     "memberof": "src/server/api.js",
@@ -715,7 +1295,7 @@
   },
   {
     "kind": "index",
-    "content": "# TestExercise",
+    "content": "## Modules\n\n<dl>\n<dt><a href=\"#module_Gameboard\">Gameboard</a></dt>\n<dd></dd>\n<dt><a href=\"#module_Scoreboard\">Scoreboard</a></dt>\n<dd></dd>\n<dt><a href=\"#module_Tictactoe\">Tictactoe</a></dt>\n<dd></dd>\n</dl>\n\n<a name=\"module_Gameboard\"></a>\n\n## Gameboard\n\n* [Gameboard](#module_Gameboard)\n    * [~GameBoard()](#module_Gameboard..GameBoard)\n        * [.isValidInput()](#module_Gameboard..GameBoard+isValidInput)\n        * [.fillSquare()](#module_Gameboard..GameBoard+fillSquare)\n        * [.isFull()](#module_Gameboard..GameBoard+isFull)\n        * [.clearBoard()](#module_Gameboard..GameBoard+clearBoard)\n        * [.isWinner()](#module_Gameboard..GameBoard+isWinner)\n        * [.isWinnerHorizontal()](#module_Gameboard..GameBoard+isWinnerHorizontal)\n        * [.isWinnerVertical()](#module_Gameboard..GameBoard+isWinnerVertical)\n        * [.isWinnerDiagonal()](#module_Gameboard..GameBoard+isWinnerDiagonal)\n        * [.isThreeFilled()](#module_Gameboard..GameBoard+isThreeFilled)\n\n<a name=\"module_Gameboard..GameBoard\"></a>\n\n### Gameboard~GameBoard()\nGameBoard constructor that initializes and array of characters\n that represents a game board for a tic tac toe game.\n\n**Kind**: inner method of [<code>Gameboard</code>](#module_Gameboard)  \n**Member{char[9]}**: squares - Represents the tic tac toe board.  \n**Member{int}**: filledSquares - Stores how many squares in the board are filled with either 'X' or 'O'.  \n\n* [~GameBoard()](#module_Gameboard..GameBoard)\n    * [.isValidInput()](#module_Gameboard..GameBoard+isValidInput)\n    * [.fillSquare()](#module_Gameboard..GameBoard+fillSquare)\n    * [.isFull()](#module_Gameboard..GameBoard+isFull)\n    * [.clearBoard()](#module_Gameboard..GameBoard+clearBoard)\n    * [.isWinner()](#module_Gameboard..GameBoard+isWinner)\n    * [.isWinnerHorizontal()](#module_Gameboard..GameBoard+isWinnerHorizontal)\n    * [.isWinnerVertical()](#module_Gameboard..GameBoard+isWinnerVertical)\n    * [.isWinnerDiagonal()](#module_Gameboard..GameBoard+isWinnerDiagonal)\n    * [.isThreeFilled()](#module_Gameboard..GameBoard+isThreeFilled)\n\n<a name=\"module_Gameboard..GameBoard+isValidInput\"></a>\n\n#### gameBoard.isValidInput()\nChecks if input has a value between 1-9 and therefor valid.\n\n**Kind**: instance method of [<code>GameBoard</code>](#module_Gameboard..GameBoard)  \n**Param{int}**: input - An integer value from 1-9 representing a square in the scoreboard.  \n**Return{bool}**: Returns true if input has a value between 1-9, otherwise false.  \n<a name=\"module_Gameboard..GameBoard+fillSquare\"></a>\n\n#### gameBoard.fillSquare()\nFills a square in the game board with either 'X' or 'O' depending on the value of sign\n and increments squaresFilled if the value of input is between 1-9.\n\n**Kind**: instance method of [<code>GameBoard</code>](#module_Gameboard..GameBoard)  \n**Param{input}**: - An integer value from 1-9 representing a square in the scoreboard.  \n**Param{sign}**: - A char which has the value 'X' or 'O' depending on which players' turn it is.  \n**Return{bool}**: - Returns true if the square was successfully filled, otherwise false.  \n<a name=\"module_Gameboard..GameBoard+isFull\"></a>\n\n#### gameBoard.isFull()\nChecks if the game board is full. If filledSquares is equal to 9 then the board is full.\n\n**Kind**: instance method of [<code>GameBoard</code>](#module_Gameboard..GameBoard)  \n**Return{bool}**: Return true if filledSquares is equals to 9, otherwise false.  \n<a name=\"module_Gameboard..GameBoard+clearBoard\"></a>\n\n#### gameBoard.clearBoard()\nClears the game board by setting filledSquares to 0 and every index in squares to \" \".\n\n**Kind**: instance method of [<code>GameBoard</code>](#module_Gameboard..GameBoard)  \n<a name=\"module_Gameboard..GameBoard+isWinner\"></a>\n\n#### gameBoard.isWinner()\nChecks if the current player has won the game.\n\n**Kind**: instance method of [<code>GameBoard</code>](#module_Gameboard..GameBoard)  \n**Param{char}**: sign - Represents the current player either 'X' or 'O'.  \n**Return{bool}**: Returns true is there is a winner, otherwise false.  \n<a name=\"module_Gameboard..GameBoard+isWinnerHorizontal\"></a>\n\n#### gameBoard.isWinnerHorizontal()\nChecks the game board horizontally for any three horizontal squares that\nhave the same value as sign.\n\n**Kind**: instance method of [<code>GameBoard</code>](#module_Gameboard..GameBoard)  \n**Param{char}**: sign - Represents the current player either 'X' or 'O'.  \n**Return{bool}**: Returns true if three horizontal squares have the same value as sign, otherwise false.  \n<a name=\"module_Gameboard..GameBoard+isWinnerVertical\"></a>\n\n#### gameBoard.isWinnerVertical()\nChecks the game board vertically for any three vertical squares that \nhave the same value as sign.\n\n**Kind**: instance method of [<code>GameBoard</code>](#module_Gameboard..GameBoard)  \n**Param{char}**: sign - Represents the current player either 'X' or 'O'.  \n**Return{bool}**: Returns true if three vertically squares have the same value as sign, otherwise false.  \n<a name=\"module_Gameboard..GameBoard+isWinnerDiagonal\"></a>\n\n#### gameBoard.isWinnerDiagonal()\nChecks the game board diagonally for any three diagonal squares that \nhave the same value as sign.\n\n**Kind**: instance method of [<code>GameBoard</code>](#module_Gameboard..GameBoard)  \n**Param{char}**: sign - Represents the current player either 'X' or 'O'.  \n**Return{bool}**: Returns true if three diagonal squares have the same value as sign, otherwise false.  \n<a name=\"module_Gameboard..GameBoard+isThreeFilled\"></a>\n\n#### gameBoard.isThreeFilled()\nChecks if three squares are filled with the same sign value.\n\n**Kind**: instance method of [<code>GameBoard</code>](#module_Gameboard..GameBoard)  \n**Param{char}**: sign - Represents the current player either 'X' or 'O'.  \n**Param{int}**: index1 - An index in the square array.  \n**Param{int}**: index1 - An index in the square array.  \n**Param{int}**: index1 - An index in the square array.  \n**Return{bool}**: Returns true if there are three squares filled with the sign value, otherwise false.  \n<a name=\"module_Scoreboard\"></a>\n\n## Scoreboard\n\n* [Scoreboard](#module_Scoreboard)\n    * [~ScoreBoard()](#module_Scoreboard..ScoreBoard)\n        * [.raiseWins()](#module_Scoreboard..ScoreBoard+raiseWins)\n        * [.clearScores()](#module_Scoreboard..ScoreBoard+clearScores)\n\n<a name=\"module_Scoreboard..ScoreBoard\"></a>\n\n### Scoreboard~ScoreBoard()\nScoreBoard constructor the initializes xWins and oWins as 0.\n\n**Kind**: inner method of [<code>Scoreboard</code>](#module_Scoreboard)  \n\n* [~ScoreBoard()](#module_Scoreboard..ScoreBoard)\n    * [.raiseWins()](#module_Scoreboard..ScoreBoard+raiseWins)\n    * [.clearScores()](#module_Scoreboard..ScoreBoard+clearScores)\n\n<a name=\"module_Scoreboard..ScoreBoard+raiseWins\"></a>\n\n#### scoreBoard.raiseWins()\nIncrements either xWins or oWins depending on whether the value of sign is \"X\" or \"O\".\n\n**Kind**: instance method of [<code>ScoreBoard</code>](#module_Scoreboard..ScoreBoard)  \n<a name=\"module_Scoreboard..ScoreBoard+clearScores\"></a>\n\n#### scoreBoard.clearScores()\nSets xWins and oWins to 0.\n\n**Kind**: instance method of [<code>ScoreBoard</code>](#module_Scoreboard..ScoreBoard)  \n<a name=\"module_Tictactoe\"></a>\n\n## Tictactoe\n\n* [Tictactoe](#module_Tictactoe)\n    * [~Tictactoe()](#module_Tictactoe..Tictactoe)\n        * [.takeInput()](#module_Tictactoe..Tictactoe+takeInput)\n        * [.showBoard()](#module_Tictactoe..Tictactoe+showBoard)\n        * [.startNewGame()](#module_Tictactoe..Tictactoe+startNewGame)\n        * [.play()](#module_Tictactoe..Tictactoe+play)\n\n<a name=\"module_Tictactoe..Tictactoe\"></a>\n\n### Tictactoe~Tictactoe()\nTictactoe constructor that intializes the starting player a 'X' and initalizes an empty game board and score board.\n\n**Kind**: inner method of [<code>Tictactoe</code>](#module_Tictactoe)  \n**Member{gameboard}**: gameBoard - Represents the tic tac toe gameboard.  \n**Member{scoreboard}**: scoreBoard - Represents the tic tac toe scoreboard.  \n**Member{char}**: sign - Represents the current player either 'X' or 'O'.  \n\n* [~Tictactoe()](#module_Tictactoe..Tictactoe)\n    * [.takeInput()](#module_Tictactoe..Tictactoe+takeInput)\n    * [.showBoard()](#module_Tictactoe..Tictactoe+showBoard)\n    * [.startNewGame()](#module_Tictactoe..Tictactoe+startNewGame)\n    * [.play()](#module_Tictactoe..Tictactoe+play)\n\n<a name=\"module_Tictactoe..Tictactoe+takeInput\"></a>\n\n#### tictactoe.takeInput()\nTakes in an integer as a parameter and filles a square in the gameboard with the value of sign beetween 1-9 \ncorresponding to the value of input and then swaps the value of sign to 'X' or 'O' depending on the current value of sign.\n\n**Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  \n**Param{int}**: input - An integer value from 1-9 representing a square in the scoreboard.  \n**Return{bool}**: Returns whether or not input was a success.  \n<a name=\"module_Tictactoe..Tictactoe+showBoard\"></a>\n\n#### tictactoe.showBoard()\nPrints out the tic tac toe board to the console.\n\n**Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  \n<a name=\"module_Tictactoe..Tictactoe+startNewGame\"></a>\n\n#### tictactoe.startNewGame()\nSets the current player as 'X' and clears the game board and the score board\n\n**Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  \n<a name=\"module_Tictactoe..Tictactoe+play\"></a>\n\n#### tictactoe.play()\nStarts a tic tac toe game, and calls itself recursively until either player wins or the game ends in a draw.\nIf either player wins raise either xWins og oWins in the score board depending if 'X' or 'O' won.\n\n**Kind**: instance method of [<code>Tictactoe</code>](#module_Tictactoe..Tictactoe)  \n",
     "longname": "/Users/nokkvikarlsson/Documents/Þriðja önn/Hugbúnaðarfræði/TestExercise/TestExercise/README.md",
     "name": "./README.md",
     "static": true,
@@ -723,7 +1303,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"testexercise\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"app.js\",\n  \"scripts\": {\n    \"test\": \"jest\",\n    \"clean\": \"rm -rf node_modules\",\n    \"run\": \"node app.js\",\n    \"build\": \"webpack\"\n  },\n  \"author\": \"nokkvi karlsson\",\n  \"license\": \"ISC\",\n  \"devDependencies\": {\n    \"jest\": \"^23.6.0\",\n    \"supertest\": \"^3.3.0\",\n    \"webpack-cli\": \"^3.1.2\"\n  },\n  \"dependencies\": {\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"express\": \"^4.16.4\",\n    \"lodash\": \"^4.17.11\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/nokkvikarlsson/TestExercise.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/nokkvikarlsson/TestExercise/issues\"\n  },\n  \"homepage\": \"https://github.com/nokkvikarlsson/TestExercise#readme\"\n}\n",
+    "content": "{\n  \"name\": \"testexercise\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"app.js\",\n  \"scripts\": {\n    \"test\": \"jest\",\n    \"clean\": \"rm -rf node_modules\",\n    \"run\": \"node app.js\",\n    \"build\": \"webpack\",\n    \"doc\": \"jsdoc2md src/logic/* > README.md\"\n  },\n  \"author\": \"nokkvi karlsson\",\n  \"license\": \"ISC\",\n  \"devDependencies\": {\n    \"jest\": \"^23.6.0\",\n    \"supertest\": \"^3.3.0\",\n    \"webpack-cli\": \"^3.1.2\"\n  },\n  \"dependencies\": {\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"express\": \"^4.16.4\",\n    \"lodash\": \"^4.17.11\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/nokkvikarlsson/TestExercise.git\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/nokkvikarlsson/TestExercise/issues\"\n  },\n  \"homepage\": \"https://github.com/nokkvikarlsson/TestExercise#readme\"\n}\n",
     "longname": "/Users/nokkvikarlsson/Documents/Þriðja önn/Hugbúnaðarfræði/TestExercise/TestExercise/package.json",
     "name": "package.json",
     "static": true,

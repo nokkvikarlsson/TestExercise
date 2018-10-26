@@ -1,13 +1,49 @@
-/**
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/logic/Gameboard.js | testexercise</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/nokkvikarlsson/TestExercise"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  </ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/logic/Gameboard.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
  * GameBoard constructor that initializes and array of characters
  * that represents a game board for a tic tac toe game.
  * @constructor
  * @member{char[9]} squares - Represents the tic tac toe board.
- * @member{integer} filledSquares - Stores how many squares in the board are filled with either 'X' or 'O'.
+ * @member{integer} filledSquares - Stores how many squares in the board are filled with either &apos;X&apos; or &apos;O&apos;.
  */
 function GameBoard() {
     //squaresFilled is initialized in clearBoard() call
-    //decleration is kept in comment for readability's sake
+    //decleration is kept in comment for readability&apos;s sake
     //this.squaresFilled = 0;
     this.squares = new Array(9);
     this.clearBoard();
@@ -19,17 +55,17 @@ function GameBoard() {
  * @return{bool} Returns true if input has a value between 1-9, otherwise false.
  */
 GameBoard.prototype.isValidInput = function(input) {
-    if(input > 0 && input < 10 && this.squares[input - 1] === " ") {
+    if(input &gt; 0 &amp;&amp; input &lt; 10 &amp;&amp; this.squares[input - 1] === &quot; &quot;) {
         return true;
     }
     return false;
 }
 
 /**
- * Fills a square in the game board with either 'X' or 'O' depending on the value of sign
+ * Fills a square in the game board with either &apos;X&apos; or &apos;O&apos; depending on the value of sign
  *  and increments squaresFilled if the value of input is between 1-9.
  * @param{input} - An integer value from 1-9 representing a square in the scoreboard.
- * @param{sign} - A char which has the value 'X' or 'O' depending on which players' turn it is.
+ * @param{sign} - A char which has the value &apos;X&apos; or &apos;O&apos; depending on which players&apos; turn it is.
  * @return{bool} - Returns true if the square was successfully filled, otherwise false.
  */
 GameBoard.prototype.fillSquare = function(input, sign) {
@@ -53,18 +89,18 @@ GameBoard.prototype.isFull = function() {
 }
 
 /**
- * Clears the game board by setting filledSquares to 0 and every index in squares to " ".
+ * Clears the game board by setting filledSquares to 0 and every index in squares to &quot; &quot;.
  */
 GameBoard.prototype.clearBoard = function() {
     this.squaresFilled = 0;
-    for(var i = 0; i < this.squares.length; i++) {
-        this.squares[i] = " ";
+    for(var i = 0; i &lt; this.squares.length; i++) {
+        this.squares[i] = &quot; &quot;;
     }
 }
 
 /**
  * Checks if the current player has won the game.
- * @param{char} sign - Represents the current player either 'X' or 'O'.
+ * @param{char} sign - Represents the current player either &apos;X&apos; or &apos;O&apos;.
  * @return{bool} Returns true is there is a winner, otherwise false.
  */
 GameBoard.prototype.isWinner = function(sign) {
@@ -77,7 +113,7 @@ GameBoard.prototype.isWinner = function(sign) {
 /**
  * Checks the game board horizontally for any three horizontal squares that
  * have the same value as sign.
- * @param{char} sign - Represents the current player either 'X' or 'O'.
+ * @param{char} sign - Represents the current player either &apos;X&apos; or &apos;O&apos;.
  * @return{bool} Returns true if three horizontal squares have the same value as sign, otherwise false.
  */
 GameBoard.prototype.isWinnerHorizontal = function(sign) {
@@ -90,7 +126,7 @@ GameBoard.prototype.isWinnerHorizontal = function(sign) {
 /**
  * Checks the game board vertically for any three vertical squares that 
  * have the same value as sign.
- * @param{char} sign - Represents the current player either 'X' or 'O'.
+ * @param{char} sign - Represents the current player either &apos;X&apos; or &apos;O&apos;.
  * @return{bool} Returns true if three vertically squares have the same value as sign, otherwise false.
  */
 GameBoard.prototype.isWinnerVertical = function(sign) {
@@ -103,7 +139,7 @@ GameBoard.prototype.isWinnerVertical = function(sign) {
 /**
  * Checks the game board diagonally for any three diagonal squares that 
  * have the same value as sign.
- * @param{char} sign - Represents the current player either 'X' or 'O'.
+ * @param{char} sign - Represents the current player either &apos;X&apos; or &apos;O&apos;.
  * @return{bool} Returns true if three diagonal squares have the same value as sign, otherwise false.
  */
 GameBoard.prototype.isWinnerDiagonal = function(sign) {
@@ -115,17 +151,34 @@ GameBoard.prototype.isWinnerDiagonal = function(sign) {
 
 /**
  * Checks if three squares are filled with the same sign value.
- * @param{char} sign - Represents the current player either 'X' or 'O'.
+ * @param{char} sign - Represents the current player either &apos;X&apos; or &apos;O&apos;.
  * @param{int} index1 - An index in the square array.
  * @param{int} index1 - An index in the square array.
  * @param{int} index1 - An index in the square array.
  * @return{bool} Returns true if there are three squares filled with the sign value, otherwise false.
  */
 GameBoard.prototype.isThreeFilled = function(sign, index1, index2, index3) {
-    if(this.squares[index1] === sign && this.squares[index2] === sign && this.squares[index3] === sign) {
+    if(this.squares[index1] === sign &amp;&amp; this.squares[index2] === sign &amp;&amp; this.squares[index3] === sign) {
         return true;
     }
     return false;
 }
 
 module.exports = GameBoard;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

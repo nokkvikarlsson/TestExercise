@@ -1,7 +1,7 @@
 {
-  "coverage": "20%",
-  "expectCount": 5,
-  "actualCount": 1,
+  "coverage": "69.23%",
+  "expectCount": 26,
+  "actualCount": 18,
   "files": {
     "src/client/index.js": {
       "expectCount": 1,
@@ -10,10 +10,31 @@
         1
       ]
     },
+    "src/logic/Gameboard.js": {
+      "expectCount": 10,
+      "actualCount": 10,
+      "undocumentLines": []
+    },
+    "src/logic/Scoreboard.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "src/logic/Tictactoe.js": {
+      "expectCount": 8,
+      "actualCount": 5,
+      "undocumentLines": [
+        1,
+        2,
+        3
+      ]
+    },
     "src/logic/greeting.js": {
       "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
     },
     "src/server/api.js": {
       "expectCount": 3,

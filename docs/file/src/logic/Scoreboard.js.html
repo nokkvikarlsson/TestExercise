@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/logic/greeting.js | testexercise</title>
+  <title data-ice="title">src/logic/Scoreboard.js | testexercise</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -33,13 +33,37 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/logic/greeting.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">function greeting(name) {
-  return &quot;Hello, &quot; + name + &quot;!&quot;;
+<div class="content" data-ice="content"><h1 data-ice="title">src/logic/Scoreboard.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * ScoreBoard constructor the initializes xWins and oWins as 0.
+ * @constructor
+ */
+function ScoreBoard() {
+    this.xWins = 0;
+    this.oWins = 0;
 }
 
-module.exports = greeting;
+/**
+ * Increments either xWins or oWins depending on whether the value of sign is &quot;X&quot; or &quot;O&quot;.
+ */
+ScoreBoard.prototype.raiseWins = function(sign) {
+    if(sign === &quot;X&quot;) {
+        this.xWins++;
+    }
+    else if(sign === &quot;O&quot;) {
+        this.oWins++;
+    }
+}
 
+/**
+ * Sets xWins and oWins to 0.
+ */
+ScoreBoard.prototype.clearScores = function() {
+    this.xWins = 0;
+    this.oWins = 0;
+}
+
+module.exports = ScoreBoard;
 </code></pre>
 
 </div>
